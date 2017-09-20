@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2017
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "3rdMovement_01", "3rdMovement_01.csproj", "{A3E3B697-5240-ECFA-7488-22D3ED2B8F23}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3E3B697-5240-ECFA-7488-22D3ED2B8F23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3E3B697-5240-ECFA-7488-22D3ED2B8F23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3E3B697-5240-ECFA-7488-22D3ED2B8F23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3E3B697-5240-ECFA-7488-22D3ED2B8F23}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
