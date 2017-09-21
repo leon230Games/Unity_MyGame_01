@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ThirdPersonCamera : MonoBehaviour {
+public class CameraController : MonoBehaviour {
 
     [SerializeField] Vector3 cameraOffset;
     [SerializeField] float damping;
@@ -10,6 +10,11 @@ public class ThirdPersonCamera : MonoBehaviour {
     private float _rotY;
     private float _rotX;
     private Vector3 _offset;
+
+    public float zoomSpeed = 4f;
+    public float minZoom = 1f;
+    public float maxZoom = 5f;
+    private float currentZoom = 1f;
 
     public float xMouseSensitivity = 5f;
     public float yMouseSensitivity = 5f;
@@ -45,14 +50,10 @@ public class ThirdPersonCamera : MonoBehaviour {
     }
 
     void Update () {
-        //Vector3 targetPosition = cameraLookTarget.position + localPlayer.transform.forward * cameraOffset.z +
-        //    localPlayer.transform.up * cameraOffset.y +
-        //    localPlayer.transform.right * cameraOffset.x;
+        currentZoom -= Input.GetAxis(gameConstants.mouseScrollWheel) * zoomSpeed;
+        currentZoom = Mathf.Clamp(currentZoom, minZoom, maxZoom);
 
-        //Quaternion targetRotation = Quaternion.LookRotation(cameraLookTarget.position - targetPosition, Vector3.up);
-
-        //transform.position = Vector3.Lerp(transform.position, targetPosition, damping * Time.deltaTime);
-        //transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, damping * Time.deltaTime);
+        Debug.Log(currentZoom);
 	}
     private void LateUpdate()
     {
@@ -73,7 +74,7 @@ public class ThirdPersonCamera : MonoBehaviour {
 
 
         Quaternion rotation = Quaternion.Euler(_rotX, _rotY, 0);
-        transform.position = cameraLookTarget.position - (rotation * cameraOffset);
+        transform.position = cameraLookTarget.position - (rotation * cameraOffset) * currentZoom;
         //transform.LookAt (target.Find ("LookAt").gameObject.transform);
         transform.LookAt(cameraLookTarget);
 

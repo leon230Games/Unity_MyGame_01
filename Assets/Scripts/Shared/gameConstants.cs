@@ -9,6 +9,7 @@ public static class gameConstants {
     public const string gameManager = "_gameManager";
     public const string vertical = "Vertical";
     public const string horizontal = "Horizontal";
+    public const string mouseScrollWheel = "Mouse ScrollWheel";
 
     public const string isWalking = "IsWalking";
     public const string isSprinting = "IsSprinting";
