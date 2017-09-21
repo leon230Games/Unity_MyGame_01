@@ -78,14 +78,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
     <Compile Include="Assets\Scripts\Camera\RelativeMovement.cs" />
-    <Compile Include="Assets\Scripts\Camera\ThirdPersonCamera.cs" />
     <Compile Include="Assets\Scripts\Controllers\InputController.cs" />
     <Compile Include="Assets\Scripts\Player\Player.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerAnimation.cs" />
     <Compile Include="Assets\Scripts\Shared\gameConstants.cs" />
     <Compile Include="Assets\Scripts\Shared\GameManager.cs" />
     <Compile Include="Assets\Scripts\Shared\Helper.cs" />
+    <Compile Include="Assets\Scripts\Shared\Interactable.cs" />
     <Compile Include="Assets\Scripts\Shared\Timer.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
