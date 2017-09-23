@@ -6,7 +6,7 @@ public class Interactable : MonoBehaviour
     //How close the player needs to be to interact with object
     public float radius = 3f;
     //bool isInRange = false;
-    bool hasInteracted = false;
+    public bool hasInteracted = false;
     bool focusStarted = false;
     public Transform player;
     public KeyCode keyToInteract = KeyCode.E;
@@ -41,7 +41,6 @@ public class Interactable : MonoBehaviour
                 OnFocus();
                 if (Input.GetKeyDown(keyToInteract))
                 {
-                    hasInteracted = true;
                     Interact();
                 }
             }
