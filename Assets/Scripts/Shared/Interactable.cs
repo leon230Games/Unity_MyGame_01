@@ -22,6 +22,9 @@ public class Interactable : MonoBehaviour
 
     private void Start()
     {
+
+        player = GameObject.FindWithTag("Player").transform;
+
         if (interactionTransform == null)
         {
             interactionTransform = transform;
