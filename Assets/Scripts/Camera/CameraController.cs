@@ -22,7 +22,6 @@ public class CameraController : MonoBehaviour {
     private float yRotMin = -70f;
     private float yRotMax = 70f;
 
-
     Transform cameraLookTarget;
     Player localPlayer;
 	
@@ -52,32 +51,18 @@ public class CameraController : MonoBehaviour {
     void Update () {
         currentZoom -= Input.GetAxis(gameConstants.mouseScrollWheel) * zoomSpeed;
         currentZoom = Mathf.Clamp(currentZoom, minZoom, maxZoom);
-
-        Debug.Log(currentZoom);
 	}
     private void LateUpdate()
     {
-        //float horInput = Input.GetAxis("Horizontal");
-        //float verInput = Input.GetAxis("Vertical");
-
-        //if (horInput != 0)
-        //{
-
-            //_rotY += horInput * rotSpeed;
-            //_rotX += verInput * rotSpeed;
-        //}
-        //else
-        //{
             _rotY += Helper.ClampAngle(Input.GetAxis("Mouse X") * yMouseSensitivity, yRotMin, yRotMax);
             _rotX -= Input.GetAxis("Mouse Y") * xMouseSensitivity;
-        //}
 
+            Quaternion rotation = Quaternion.Euler(_rotX, _rotY, 0);
+            transform.position = cameraLookTarget.position - (rotation * cameraOffset) * currentZoom;
+            //transform.LookAt (target.Find ("LookAt").gameObject.transform);
+            transform.LookAt(cameraLookTarget);
 
-        Quaternion rotation = Quaternion.Euler(_rotX, _rotY, 0);
-        transform.position = cameraLookTarget.position - (rotation * cameraOffset) * currentZoom;
-        //transform.LookAt (target.Find ("LookAt").gameObject.transform);
-        transform.LookAt(cameraLookTarget);
+            //transform.LookAt(transform.gameObject.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(0.5f,0.5f,0f)));
 
-        //transform.LookAt(transform.gameObject.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(0.5f,0.5f,0f)));
     }
 }
