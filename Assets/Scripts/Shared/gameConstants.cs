@@ -17,4 +17,9 @@ public static class gameConstants {
 
     public const string jump = "Jump";
 
+    public const string inventory = "Inventory";
+    public const string mainCamera = "Main Camera";
+    public const string player = "Player";
+    public const string playerGfx = "PlayerGfx";
+
 }

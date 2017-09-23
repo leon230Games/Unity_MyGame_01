@@ -1,12 +1,24 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(RelativeMovement))]
 public class Player : MonoBehaviour {
 
-	void Awake () {
+    public GameObject inventoryUI;
+
+    void Awake () {
         GameManager.instance.localPlayer = this;
 	}
+
+    private void Update()
+    {
+        if (inventoryUI.activeSelf)
+        {
+            GameManager.instance.DisableMovementAndCamera();
+        }
+        else
+        {
+            GameManager.instance.EnableMovementAndCamera();
+        }
+    }
 
 }

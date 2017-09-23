@@ -40,9 +40,9 @@ public class GameManager {
     {
         get
         {
-            if(mInputController == null)
+            if (mInputController == null)
             {
-                mInputController = gameObject.GetComponent<InputController>();              
+                mInputController = gameObject.GetComponent<InputController>();
             }
             return mInputController;
         }
@@ -52,9 +52,10 @@ public class GameManager {
     public Player localPlayer
     {
         get
-        {return mLocalPlayer;}
+        { return mLocalPlayer; }
 
-        set {
+        set
+        {
             mLocalPlayer = value;
             if (OnLocalPlayerJoined != null)
             {
@@ -75,6 +76,27 @@ public class GameManager {
             return mTimer;
         }
 
+    }
+
+    public void DisableMovementAndCamera()
+    {
+        GameObject.Find(gameConstants.mainCamera).GetComponent<CameraController>().enabled = false;
+        GameObject.Find(gameConstants.player).GetComponent<RelativeMovement>().enabled = false;
+        GameObject.Find(gameConstants.player).GetComponent<PlayerAnimation>().enabled = false;
+
+        Animator animator = GameObject.Find(gameConstants.playerGfx).GetComponent<Animator>();
+        animator.SetBool(gameConstants.isCrouching, false);
+        animator.SetBool(gameConstants.isSprinting, false);
+        animator.SetBool(gameConstants.isWalking, false);
+        animator.SetFloat(gameConstants.horizontal, 0f);
+        animator.SetFloat(gameConstants.vertical, 0f);
+    }
+
+    public void EnableMovementAndCamera()
+    {
+        GameObject.Find(gameConstants.mainCamera).GetComponent<CameraController>().enabled = true;
+        GameObject.Find(gameConstants.player).GetComponent<RelativeMovement>().enabled = true;
+        GameObject.Find(gameConstants.player).GetComponent<PlayerAnimation>().enabled = true;
     }
 
 }
