@@ -22,4 +22,6 @@ public static class gameConstants {
     public const string player = "Player";
     public const string playerGfx = "PlayerGfx";
 
+    public const KeyCode unequipAll = KeyCode.U;
+
 }
