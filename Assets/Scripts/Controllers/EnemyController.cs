@@ -22,6 +22,7 @@ public class EnemyController : MonoBehaviour {
         if (distance <= lookRadius)
         {
             //agent.SetDestination(target.position);
+
             FaceTarget();
         }
 
