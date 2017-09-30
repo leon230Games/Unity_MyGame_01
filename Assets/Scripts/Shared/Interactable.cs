@@ -19,7 +19,7 @@ public class Interactable : MonoBehaviour
         //This is overriden for each object
         Debug.Log("Interacting..." + transform.name);
     }
-    void Start()
+    protected virtual void Start()
     {
 
         player = PlayerManager.instance.player.transform;
