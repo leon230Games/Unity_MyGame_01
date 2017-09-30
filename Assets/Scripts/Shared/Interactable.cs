@@ -19,8 +19,7 @@ public class Interactable : MonoBehaviour
         //This is overriden for each object
         Debug.Log("Interacting..." + transform.name);
     }
-
-    private void Start()
+    void Start()
     {
 
         player = PlayerManager.instance.player.transform;
@@ -38,7 +37,7 @@ public class Interactable : MonoBehaviour
             float distance = Vector3.Distance(player.position, interactionTransform.position);
             if (distance <= radius)
             {
-                OnFocus();
+                PlayerInRange();
                 if (Input.GetKeyDown(keyToInteract))
                 {
                     Interact();
@@ -51,7 +50,7 @@ public class Interactable : MonoBehaviour
         }
     }
 
-    public void OnFocus()
+    public void PlayerInRange()
     {
         //Handle interact letter
         if (!focusStarted)
