@@ -5,14 +5,21 @@ using UnityEngine;
 public class PlayerAnimation : MonoBehaviour {
 
     private Animator animator;
+    private PlayerCombat playerCombat;
 
 	// Use this for initialization
 	void Awake () {
         animator = GetComponentInChildren<Animator>();
+        playerCombat = GetComponent<PlayerCombat>();
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void Start()
+    {
+        playerCombat.onAttack += AttackTrigger;
+    }
+
+    // Update is called once per frame
+    void Update () {
         animator.SetFloat(gameConstants.vertical, GameManager.instance.inputController.Vertical);
         animator.SetFloat(gameConstants.horizontal, GameManager.instance.inputController.Horizontal);
 
@@ -21,4 +28,13 @@ public class PlayerAnimation : MonoBehaviour {
         animator.SetBool(gameConstants.isCrouching, GameManager.instance.inputController.isCrouched);
 
     }
+
+    void AttackTrigger()
+    {
+        animator.SetTrigger("Attack");
+    }
+
+
+
+
 }

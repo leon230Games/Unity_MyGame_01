@@ -24,4 +24,6 @@ public static class gameConstants {
 
     public const KeyCode unequipAll = KeyCode.U;
 
+    public const string fire1 = "Fire1";
+    public static int primaryAttack = 0;
 }

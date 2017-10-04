@@ -12,18 +12,24 @@ public class InputController : MonoBehaviour {
     public bool isWalking;
     public bool isSprinting;
     public bool isCrouched;
+    public bool primaryAttack;
 	
 	
 	void Update () {
 		Vertical = Input.GetAxis("Vertical");
         Horizontal = Input.GetAxis("Horizontal");
         MouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
-        fire1 = Input.GetButton("Fire1");
+
+        fire1 = Input.GetButton(gameConstants.fire1);
+        primaryAttack = Input.GetMouseButtonDown(gameConstants.primaryAttack);
+
         reload = Input.GetKey(KeyCode.R);
 
         isWalking = Input.GetKey(KeyCode.LeftAlt);
         isSprinting = Input.GetKey(KeyCode.LeftShift);
         isCrouched = Input.GetKey(KeyCode.C);
+
+
 
 	}
 }
