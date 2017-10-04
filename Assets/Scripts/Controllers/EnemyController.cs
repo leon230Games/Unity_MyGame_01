@@ -9,13 +9,13 @@ public class EnemyController : MonoBehaviour {
 
     Transform target;
     NavMeshAgent agent;
-    CharacterCombat combat;
+    EnemyCombat combat;
     bool canAttack = false;
 
 	void Start () {
         target = PlayerManager.instance.player.transform;
         agent = GetComponent<NavMeshAgent>();
-        combat = GetComponent<CharacterCombat>();
+        combat = GetComponent<EnemyCombat>();
 	}
 	
 	
