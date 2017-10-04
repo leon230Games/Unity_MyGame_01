@@ -17,7 +17,7 @@ public class EnemyAnimation : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
 
         enemyCombat = GetComponent<EnemyCombat>();
-        enemyCombat.onAttack += AttackAnimation;
+        enemyCombat.onAttack += AttackTrigger;
     }
 
     void Update() {
@@ -26,7 +26,7 @@ public class EnemyAnimation : MonoBehaviour {
         animator.SetFloat("speedPercent", speedPercent, animationSmoothTime, Time.deltaTime);
     }
 
-    void AttackAnimation()
+    void AttackTrigger()
     {
         animator.SetTrigger("Attack");
     }
