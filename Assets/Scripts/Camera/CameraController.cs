@@ -33,6 +33,10 @@ public class CameraController : MonoBehaviour {
     {
         _rotY = transform.eulerAngles.y;
         //_offset = cameraLookTarget.position - transform.position;
+
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
     }
 
     private void HandleOnLocalPlayerJoined(Player player)
