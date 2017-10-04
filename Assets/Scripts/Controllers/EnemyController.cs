@@ -10,6 +10,7 @@ public class EnemyController : MonoBehaviour {
     Transform target;
     NavMeshAgent agent;
     CharacterCombat combat;
+    bool canAttack = false;
 
 	void Start () {
         target = PlayerManager.instance.player.transform;
@@ -33,14 +34,21 @@ public class EnemyController : MonoBehaviour {
             //Attack the target
             CharacterStats targetStats = target.GetComponent<CharacterStats>();
 
-            if (targetStats != null)
+            //canAttack = true;
+
+            //if (targetStats != null)
+            //{
+            if (agent.velocity.sqrMagnitude <= 0f)
             {
                 combat.Attack(targetStats);
             }
+            //}
 
             FaceTarget();
-
-
+        }
+        else
+        {
+            //canAttack = false;
         }
     }
 
@@ -58,4 +66,11 @@ public class EnemyController : MonoBehaviour {
 
 
     }
+
+    public bool getCanAttack()
+    {
+        return canAttack;
+    }
+
+
 }
