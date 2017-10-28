@@ -62,7 +62,7 @@ public class EquipmentManager : MonoBehaviour {
         SetEquipmentBlendShapes(newItem, 100);
 
         currentEquipment[slotIndex] = newItem;
-        SkinnedMeshRenderer newMesh = Instantiate<SkinnedMeshRenderer>(newItem.mesh);
+        SkinnedMeshRenderer newMesh = Instantiate<SkinnedMeshRenderer>(newItem.skinnedMesh);
         newMesh.transform.parent = targetMesh.transform;
 
         newMesh.bones = targetMesh.bones;

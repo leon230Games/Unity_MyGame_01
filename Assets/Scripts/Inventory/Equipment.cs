@@ -6,7 +6,9 @@ using UnityEngine;
 public class Equipment : Item {
 
     public EquipmentSlot eqSlot;
-    public SkinnedMeshRenderer mesh;
+    public SkinnedMeshRenderer skinnedMesh;
+    //Added to match normal objects without armature
+    public MeshRenderer mesh;
     public EquipmentMeshRegion[] coveredMeshRegions;
 
     public int armorModifier;
