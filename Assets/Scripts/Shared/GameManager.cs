@@ -99,4 +99,18 @@ public class GameManager {
         GameObject.Find(gameConstants.player).GetComponent<PlayerAnimation>().enabled = true;
     }
 
+    public void MouseCursorEnabled(bool enabled)
+    {
+        Cursor.visible = enabled;
+        if(enabled == true)
+        {
+            Cursor.lockState = CursorLockMode.None;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        
+    }
+
 }

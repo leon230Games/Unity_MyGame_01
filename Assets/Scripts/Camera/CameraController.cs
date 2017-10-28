@@ -34,8 +34,7 @@ public class CameraController : MonoBehaviour {
         _rotY = transform.eulerAngles.y;
         //_offset = cameraLookTarget.position - transform.position;
 
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        GameManager.instance.MouseCursorEnabled(false);
 
     }
 
@@ -69,4 +68,6 @@ public class CameraController : MonoBehaviour {
             //transform.LookAt(transform.gameObject.GetComponent<Camera>().ScreenToWorldPoint(new Vector3(0.5f,0.5f,0f)));
 
     }
+
+
 }

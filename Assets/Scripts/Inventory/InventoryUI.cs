@@ -28,6 +28,7 @@ public class InventoryUI : MonoBehaviour
 
         if (Input.GetButtonDown(gameConstants.inventory))
         {
+            GameManager.instance.MouseCursorEnabled(!inventoryUI.activeSelf);
             inventoryUI.SetActive(!inventoryUI.activeSelf);
         }
     }
