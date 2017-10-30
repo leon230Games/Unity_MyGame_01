@@ -80,6 +80,7 @@ ModelImporter:
     100144: mixamorig_Spine2
     100146: Pants
     100148: Shirt
+    100150: Handy
     400000: Armature
     400002: Body
     400004: //RootNode
@@ -155,12 +156,14 @@ ModelImporter:
     400144: mixamorig_Spine2
     400146: Pants
     400148: Shirt
+    400150: Handy
     4300000: Pants
     4300002: Shirt
     4300004: Hair
     4300006: Body
     4300008: Eyelashes
     4300010: Eyes
+    4300012: Handy
     7400000: Default Take
     7400002: Armature_mixamo_com_Layer0
     7400004: Walk
@@ -171,6 +174,7 @@ ModelImporter:
     13700006: Hair
     13700008: Pants
     13700010: Shirt
+    13700012: Handy
   materials:
     importMaterials: 1
     materialName: 0
