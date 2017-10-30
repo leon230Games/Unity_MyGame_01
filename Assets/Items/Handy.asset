@@ -9,15 +9,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5345f056ca3dfa4e89d1de4c7357e2a, type: 3}
-  m_Name: Hair
+  m_Name: Handy
   m_EditorClassIdentifier: 
-  name: Hair
+  name: Handy
   icon: {fileID: 21300000, guid: 46aa15c60366cc342811ac665199930a, type: 3}
-  isDefaultItem: 1
-  eqSlot: 0
-  skinnedMesh: {fileID: 137604727193453272, guid: c4c95f7ced2ea9f4581e3eb01e05143f,
+  isDefaultItem: 0
+  eqSlot: 3
+  skinnedMesh: {fileID: 137817977336614000, guid: d01ce3c543f565f41820a3d4095c507c,
     type: 2}
   mesh: {fileID: 0}
   coveredMeshRegions: 
-  armorModifier: 0
-  damageModifier: 0
+  armorModifier: 2
+  damageModifier: 2
